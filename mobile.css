@@ -1,0 +1,936 @@
+/* ===== MOBILE.CSS - Стили для смартфонов (до 767px) ===== */
+
+/* Настройки для маленьких экранов */
+@media (max-width: 375px) {
+    html { font-size: 14px; }
+    .container { padding: 0 15px; }
+}
+
+/* ===== ШАПКА ДЛЯ МОБИЛЬНЫХ ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+/* Логотип на мобильных */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo__img {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+}
+
+.logo__text {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+/* Кнопка телефона в шапке (скрываем на мобильных) */
+.header__phone {
+    display: none !important;
+}
+
+/* Бургер-меню для мобильных */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger__line {
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: var(--transition);
+    transform-origin: center;
+}
+
+.burger.active .burger__line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger.active .burger__line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active .burger__line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Навигация для мобильных */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--gradient-primary);
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    padding-top: 80px;
+    overflow-y: auto;
+}
+
+.nav.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 20px;
+}
+
+.nav__link {
+    display: block;
+    padding: 18px 0;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: var(--transition);
+}
+
+.nav__link:last-child {
+    border-bottom: none;
+}
+
+.nav__link:hover,
+.nav__link--active {
+    color: var(--secondary);
+    transform: translateX(10px);
+}
+
+/* ===== ГЛАВНЫЙ ЭКРАН ДЛЯ МОБИЛЬНЫХ ===== */
+.hero {
+    background: var(--gradient-hero), url('../images/hero-bg-mobile.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    padding: 120px 0 60px;
+    margin-top: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero__container {
+    width: 100%;
+}
+
+.hero__title {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero__subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.hero__phone-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 0;
+    padding: 16px;
+    background: var(--gradient-secondary);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-orange);
+    transition: var(--transition);
+}
+
+.hero__phone-link:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero__phone-link i {
+    font-size: 1.2rem;
+}
+
+/* ===== ПРЕИМУЩЕСТВА ДЛЯ МОБИЛЬНЫХ ===== */
+.features {
+    padding: 60px 0;
+    background: var(--light);
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-card__icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-accent);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-card__title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.feature-card__desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.features__text {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--primary);
+    padding: 20px;
+    background: rgba(255, 107, 53, 0.05);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--secondary);
+}
+
+/* ===== ЦЕНЫ ДЛЯ МОБИЛЬНЫХ ===== */
+.pricing {
+    padding: 60px 0;
+    background: white;
+}
+
+.price-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.price-card__header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.price-card__title {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.price-card__subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.price-card__body {
+    padding: 25px 20px;
+}
+
+.price-card__name {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.price-card__list {
+    margin-bottom: 20px;
+}
+
+.price-card__list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-gray);
+    position: relative;
+    padding-left: 30px;
+    font-size: 1rem;
+}
+
+.price-card__list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.price-card__note {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    padding: 15px;
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+}
+
+/* ===== ОТЗЫВЫ ДЛЯ МОБИЛЬНЫХ ===== */
+.reviews {
+    padding: 60px 0;
+    background: var(--light);
+}
+
+.reviews__slider {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.review-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.review-card::before {
+    content: '"';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 4rem;
+    color: rgba(255, 107, 53, 0.1);
+    font-family: Georgia, serif;
+}
+
+.review-card__text {
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding-right: 30px;
+}
+
+.review-card__author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-gray);
+}
+
+.review-card__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--light-gray);
+}
+
+.review-card__name {
+    font-size: 1.1rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.reviews__action {
+    text-align: center;
+}
+
+/* ===== CTA БЛОК ДЛЯ МОБИЛЬНЫХ ===== */
+.cta {
+    padding: 60px 0;
+    background: var(--gradient-primary);
+    color: white;
+    text-align: center;
+}
+
+.cta__container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.cta__title {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.cta__text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* ===== СТРАНИЦА "О КОМПАНИИ" ДЛЯ МОБИЛЬНЫХ ===== */
+.main-content {
+    padding-top: 80px;
+}
+
+.breadcrumbs {
+    padding: 20px 0;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs__link {
+    color: var(--text-light);
+}
+
+.breadcrumbs__current {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.about-page {
+    padding: 30px 0 60px;
+}
+
+.about-page__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-page__text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.about-page__image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.about-page__img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.about-page__contacts {
+    background: rgba(15, 28, 63, 0.05);
+    padding: 30px 20px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-page__contacts-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.about-page__phone {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.about-page__address {
+    color: var(--text-light);
+    font-size: 1.05rem;
+}
+
+/* ===== СТРАНИЦА "УСЛУГИ" ДЛЯ МОБИЛЬНЫХ ===== */
+.services-page {
+    padding: 30px 0 60px;
+}
+
+.services-page__intro {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.services-page__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--light-gray);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary);
+}
+
+.service-card__title {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.service-card__price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.service-card__desc {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+.service-card--wide {
+    grid-column: 1;
+}
+
+.service-card--highlight {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(0, 180, 216, 0.05));
+    border: 2px dashed var(--accent);
+}
+
+.services-page__cta {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--light-gray);
+    border-radius: var(--radius-lg);
+    margin-top: 40px;
+}
+
+.services-page__cta p {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* ===== СТРАНИЦА "КОНТАКТЫ" ДЛЯ МОБИЛЬНЫХ ===== */
+.contacts-page {
+    padding: 30px 0 60px;
+}
+
+.contacts-page__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contacts-block {
+    background: white;
+    padding: 25px 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.contacts-block__title {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.contacts-block__item {
+    margin-bottom: 12px;
+    color: var(--text);
+    font-size: 1.05rem;
+}
+
+.contacts-block__phone {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+.contacts-block__trust {
+    font-style: italic;
+    color: var(--success);
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.contacts-block__address {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.6;
+    padding: 15px;
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    margin-top: 15px;
+}
+
+.contacts-page__map {
+    height: 300px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== ФУТЕР ДЛЯ МОБИЛЬНЫХ ===== */
+.footer__top {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer__contacts {
+    text-align: center;
+}
+
+.footer__phone {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.footer__address {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+}
+
+.footer__nav {
+    text-align: center;
+}
+
+.footer__nav-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.footer__nav-link {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer__nav-link:hover {
+    color: var(--secondary);
+}
+
+/* ===== СПЕЦИАЛЬНЫЕ КЛАССЫ ДЛЯ МОБИЛЬНЫХ ===== */
+
+/* Скрываем на мобильных */
+.mobile-hide {
+    display: none !important;
+}
+
+/* Показываем только на мобильных */
+.mobile-show {
+    display: block !important;
+}
+
+/* Кнопка звонка для мобильных (внизу экрана) */
+.mobile-call-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-secondary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-orange);
+    z-index: 998;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.mobile-call-button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Адаптивные изображения */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Отступы для безопасных зон на iPhone X+ */
+.safe-area-padding {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+    padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Большие пальцы-дружественные кнопки */
+.tappable {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Плавная прокрутка для iOS */
+.scroll-smooth {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Фикс для 100vh на мобильных */
+.mobile-full-height {
+    height: 100vh;
+    height: -webkit-fill-available;
+}
+
+/* ===== МЕДИА ЗАПРОСЫ ДЛЯ МОБИЛЬНЫХ ===== */
+
+/* Маленькие телефоны (до 320px) */
+@media (max-width: 320px) {
+    .logo__text {
+        max-width: 120px;
+        font-size: 1rem;
+    }
+    
+    .hero__title {
+        font-size: 1.8rem;
+    }
+    
+    .hero__phone-link {
+        font-size: 1.1rem;
+        padding: 14px;
+    }
+    
+    .footer__nav-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Телефоны среднего размера (321px - 375px) */
+@media (min-width: 321px) and (max-width: 375px) {
+    .container {
+        padding: 0 18px;
+    }
+    
+    .feature-card,
+    .review-card,
+    .service-card {
+        padding: 22px 18px;
+    }
+}
+
+/* Большие телефоны (376px - 424px) */
+@media (min-width: 376px) and (max-width: 424px) {
+    .hero__title {
+        font-size: 2.2rem;
+    }
+    
+    .features__grid,
+    .reviews__slider,
+    .services-page__grid {
+        gap: 18px;
+    }
+}
+
+/* Планшеты в вертикальной ориентации (425px - 767px) */
+@media (min-width: 425px) and (max-width: 767px) {
+    .container {
+        padding: 0 25px;
+    }
+    
+    .hero__title {
+        font-size: 2.4rem;
+    }
+    
+    .features__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-page__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer__nav-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===== СПЕЦИАЛЬНЫЕ ФИКСЫ ДЛЯ IOS ===== */
+
+/* Фикс для fixed-элементов на iOS */
+@supports (-webkit-touch-callout: none) {
+    .header {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    
+    .mobile-call-button {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+/* Фикс для 100vh на iOS */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Фикс для инпутов на iOS */
+input, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+/* Фикс для фокуса на iOS */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+/* ===== АНИМАЦИИ ДЛЯ МОБИЛЬНЫХ ===== */
+
+/* Анимация появления при скролле */
+@keyframes fadeInUpMobile {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-animation {
+    animation: fadeInUpMobile 0.6s ease-out;
+}
+
+/* Анимация для кнопки звонка */
+@keyframes pulseMobile {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+    }
+}
+
+.pulse-animation {
+    animation: pulseMobile 2s infinite;
+}
