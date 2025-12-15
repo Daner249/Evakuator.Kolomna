@@ -732,30 +732,6 @@
     display: block !important;
 }
 
-/* Кнопка звонка для мобильных (внизу экрана) */
-.mobile-call-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: var(--gradient-secondary);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: var(--shadow-orange);
-    z-index: 998;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.mobile-call-button:hover {
-    transform: scale(1.1);
-    box-shadow: var(--shadow-lg);
-}
 
 /* Адаптивные изображения */
 .responsive-img {
@@ -933,4 +909,5 @@ input:focus, textarea:focus, select:focus {
 
 .pulse-animation {
     animation: pulseMobile 2s infinite;
+
 }
