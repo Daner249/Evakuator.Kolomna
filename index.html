@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эвакуатор в Коломне 24/7 | Быстрая подача</title>
+    <meta name="description" content="Эвакуатор в Коломне круглосуточно. Быстрая подача от 25 минут, низкие цены от 2000 руб. Грузоподъемность до 4 тонн. Работаем без посредников.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Подключим современные шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e74c3c">
+    <meta name="msapplication-TileColor" content="#2c3e50">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+<!-- Preloader -->
+<div class="preloader">
+    <div class="preloader__content">
+        <div class="preloader__logo">
+            <div class="preloader__icon">🚗</div>
+            <div class="preloader__title">Эвакуатор в Коломне</div>
+        </div>
+        <div class="preloader__progress">
+            <div class="preloader__progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader__content {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.preloader__logo {
+    margin-bottom: 40px;
+}
+
+.preloader__icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.preloader__title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.preloader__progress {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.preloader__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--gradient-secondary);
+    animation: loading 2s ease-in-out;
+}
+
+@keyframes loading {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+</style>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <!-- Логотип (замени src на свой) -->
+            <a href="index.html" class="logo">
+                <img src="images/Evacuator.icon.png" alt="Логотип Эвакуатор в Коломне" class="logo__img">
+                <span class="logo__text">Эвакуатор в Коломне</span>
+            </a>
+
+            <!-- Основная навигация -->
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Главная</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">О компании</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link">Наши услуги</a></li>
+                    <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Телефон в шапке -->
+            <a href="tel:+79153068787" class="header__phone">
+                <i class="fas fa-phone-alt"></i>
+                8 (915) 306-87-87
+            </a>
+
+            <!-- Кнопка бургер-меню для мобилок -->
+            <button class="burger" aria-label="Открыть меню">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Герой-секция -->
+        <section class="hero">
+            <div class="container hero__container">
+                <h1 class="hero__title">Эвакуатор в Коломне</h1>
+                <p class="hero__subtitle">Эвакуатор 24/7. Помогаем в решении вашей проблемы. Быстрая подача. Стабильные недорогие цены, скидки.</p>
+                <a href="tel:+79153068787" class="button button--primary button--large">Заказать эвакуатор</a>
+                <a href="tel:+79153068787" class="hero__phone-link">89153068787</a>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title visually-hidden">Наши преимущества</h2>
+                <div class="features__grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon"><i class="fas fa-bolt"></i></div>
+                        <h3 class="feature-card__title">Быстрая подача!</h3>
+                        <p class="feature-card__desc">От 25 минут</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="feature-card__title">Служба эвакуации!</h3>
+                        <p class="feature-card__desc">Более 10 лет опыта</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon"><i class="fas fa-clock"></i></div>
+                        <h3 class="feature-card__title">Работаем 24/7</h3>
+                        <p class="feature-card__desc">Круглосуточно и без выходных</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon"><i class="fas fa-handshake"></i></div>
+                        <h3 class="feature-card__title">БЕЗ ПОСРЕДНИКОВ!</h3>
+                        <p class="feature-card__desc">Залог хороших цен</p>
+                    </div>
+                </div>
+                <p class="features__text">Эвакуация любого автотранспорта, а так же повреждённых, неисправных автомобилей</p>
+            </div>
+        </section>
+
+        <!-- Цены -->
+        <section class="pricing">
+            <div class="container">
+                <h2 class="section-title">Наши цены</h2>
+                <div class="pricing__grid">
+                    <div class="price-card">
+                        <div class="price-card__header">
+                            <h3 class="price-card__title">от 2000 р</h3>
+                            <p class="price-card__subtitle">40 р *за 1 км</p>
+                        </div>
+                        <div class="price-card__body">
+                            <h4 class="price-card__name">Тариф "Район"</h4>
+                            <ul class="price-card__list">
+                                <li>Подача эвакуатора;</li>
+                                <li>Загрузка - выгрузка;</li>
+                                <li>Доставка до места.</li>
+                            </ul>
+                            <p class="price-card__note"><strong>Грузоподъёмность до 4 тонн.</strong></p>
+                            <p class="price-card__note">Наш эвакуатор оснащен фаркопом</p>
+                        </div>
+                    </div>
+                    <!-- Можно добавить больше тарифов -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы -->
+        <section class="reviews">
+            <div class="container">
+                <h2 class="section-title">Отзывы</h2>
+                <div class="reviews__slider">
+                    <div class="review-card">
+                        <div class="review-card__content">
+                            <p class="review-card__text">“Обратилась к Александру по вопросу эвакуации автомобиля. Договорились, точно в срок подъехал, бережно и профессионально погрузил мою машину на эвакуатор, с комфортом отвёз нас с дачи в Ступинском районе на сервис в Москву. Цена порадовала. Приятный человек и знаток своего дела! Рекомендую”</p>
+                        </div>
+                        <div class="review-card__author">
+                            <img src="images/Nastya.webp" alt="Фото Анастасии Калашниковой" class="review-card__avatar">
+                            <div>
+                                <h4 class="review-card__name">Анастасия Калашникова</h4>
+                                <!-- Можно добавить дату -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__content">
+                            <p class="review-card__text">“Хочу еще раз поблагодарить Александра. Все быстро, без миллиона вопросов. Приехал, погрузил, доставил. Четко. рекомендую.”</p>
+                        </div>
+                        <div class="review-card__author">
+                            <img src="images/Ilya.webp" alt="Фото Ильи Васильева" class="review-card__avatar">
+                            <div>
+                                <h4 class="review-card__name">Илья Васильев</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__content">
+                            <p class="review-card__text">“Сегодня рано утром сломались на трассе М5, по интернету нашли эвакуатор наугад. Приехал за пол часа. Оказался очень вежливым хорошим мастером своего дела, очень хорошо знает свою работу. По сравнению с другими эвакуаторами не дорого.…”</p>
+                        </div>
+                        <div class="review-card__author">
+                            <img src="images/Mari.webp" alt="Фото Мии Райдер" class="review-card__avatar">
+                            <div>
+                                <h4 class="review-card__name">Мия Райдер</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews__action">
+                    <a href="#" class="button button--secondary">Оставить отзыв!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущество (Пропуск) -->
+        <section class="cta">
+            <div class="container cta__container">
+                <div class="cta__text-block">
+                    <h2 class="cta__title">Пропуск МКАД, ТТК, СК</h2>
+                    <p class="cta__text">Работаем по всей Москве и области с официальными пропусками.</p>
+                </div>
+                <a href="tel:+79153068787" class="button button--primary">Заказать эвакуатор</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__contacts">
+                    <a href="tel:+79153068787" class="footer__phone">8(915)306-87-87</a>
+                    <a href="tel:+79153068787" class="footer__phone">8(915)306-87-87</a>
+                    <p class="footer__address">Россия, г. Коломна</p>
+                </div>
+                <nav class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li><a href="index.html" class="footer__nav-link">Главная</a></li>
+                        <li><a href="about.html" class="footer__nav-link">О компании</a></li>
+                        <li><a href="services.html" class="footer__nav-link">Наши услуги</a></li>
+                        <li><a href="contacts.html" class="footer__nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">2010–2024 © Автосервис «Механик»</p>
+                <!-- Можно добавить ссылки на соцсети -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
