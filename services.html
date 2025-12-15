@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши услуги и цены | Эвакуатор в Коломне</title>
+    <meta name="description" content="Прайс-лист на услуги эвакуации и автосервиса в Коломне. Эвакуатор от 2000 руб, замена масла, диагностика, шиномонтаж.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e74c3c">
+<meta name="msapplication-TileColor" content="#2c3e50">
+<meta name="theme-color" content="#2c3e50">
+<!-- Основной CSS -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Мобильный CSS (подключается вторым) -->
+<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Кнопка быстрого звонка для мобильных -->
+<a href="tel:+79153068787" class="mobile-call-button pulse-animation mobile-show" id="mobileCallBtn">
+    <i class="fas fa-phone"></i>
+</a>
+
+<script>
+// Определение мобильного устройства
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Показываем кнопку только на мобильных
+if (isMobile()) {
+    document.getElementById('mobileCallBtn').classList.add('mobile-show');
+}
+
+// Отслеживание свайпов для меню
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const nav = document.querySelector('.nav');
+    if (touchEndX < touchStartX - 50 && nav.classList.contains('active')) {
+        // Свайп влево - закрываем меню
+        document.querySelector('.burger').classList.remove('active');
+        nav.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+</script>
+    <!-- Preloader -->
+<div class="preloader">
+    <div class="preloader__content">
+        <div class="preloader__logo">
+            <div class="preloader__icon">🚗</div>
+            <div class="preloader__title">Эвакуатор в Коломне</div>
+        </div>
+        <div class="preloader__progress">
+            <div class="preloader__progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader__content {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.preloader__logo {
+    margin-bottom: 40px;
+}
+
+.preloader__icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.preloader__title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.preloader__progress {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.preloader__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--gradient-secondary);
+    animation: loading 2s ease-in-out;
+}
+
+@keyframes loading {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+</style>
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <img src="images/Evacuator.icon.png" alt="Логотип Эвакуатор в Коломне" class="logo__img">
+                <span class="logo__text">Эвакуатор в Коломне</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">О компании</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link nav__link--active">Наши услуги</a></li>
+                    <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+79153068787" class="header__phone">
+                <i class="fas fa-phone-alt"></i>
+                8 (915) 306-87-87
+            </a>
+            <button class="burger" aria-label="Открыть меню">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html" class="breadcrumbs__link">Главная</a> / <span class="breadcrumbs__current">Наши услуги</span>
+            </nav>
+
+            <section class="services-page">
+                <h1 class="section-title section-title--page">Наши услуги</h1>
+                <p class="services-page__intro">Полный спектр услуг по эвакуации и ремонту автомобилей в Коломне. Работаем оперативно и с гарантией качества.</p>
+
+                <div class="services-page__grid">
+                    <div class="service-card">
+                        <h3 class="service-card__title">Эвакуатор по городу Коломна</h3>
+                        <p class="service-card__price">от 2000 р.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title">Эвакуатор межгород</h3>
+                        <p class="service-card__price">1 км 50 р.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title">Замена масла</h3>
+                        <p class="service-card__price">от 500 р.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title">Замена колодок</h3>
+                        <p class="service-card__price">от 500 р.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title">Компьютерная диагностика</h3>
+                        <p class="service-card__price">600 р.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title">Диагностика ходовой части</h3>
+                        <p class="service-card__price">500 р.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title">Шиномонтаж</h3>
+                        <p class="service-card__price">от 1000 р.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title">Ремонт прокола</h3>
+                        <p class="service-card__price">от 100 р.</p>
+                    </div>
+                    <div class="service-card service-card--wide">
+                        <h3 class="service-card__title">Сварочные работы</h3>
+                        <p class="service-card__price">по согласованию</p>
+                    </div>
+                    <div class="service-card service-card--wide service-card--highlight">
+                        <h3 class="service-card__title">И многое другое</h3>
+                        <p class="service-card__desc">Широкий спектр услуг по ремонту и обслуживанию вашего автомобиля.</p>
+                    </div>
+                </div>
+
+                <div class="services-page__cta">
+                    <p>Точную стоимость уточняйте по телефону. Консультация бесплатно!</p>
+                    <a href="tel:+79153068787" class="button button--primary">Позвонить для уточнения</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__contacts">
+                    <a href="tel:+79153068787" class="footer__phone">8(915)306-87-87</a>
+                    <p class="footer__address">Россия, г. Коломна</p>
+                </div>
+                <nav class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li><a href="index.html" class="footer__nav-link">Главная</a></li>
+                        <li><a href="about.html" class="footer__nav-link">О компании</a></li>
+                        <li><a href="services.html" class="footer__nav-link">Наши услуги</a></li>
+                        <li><a href="contacts.html" class="footer__nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">2010–2024 © Автосервис «Механик»</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
